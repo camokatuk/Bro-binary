@@ -1,6 +1,6 @@
 package org.camokatuk.amazingbrocessor.broc.command;
 
-public class BrocessorDeviceHttpCommand extends AbstractBrocessorHttpCommand
+public class DeviceCommand implements BrocessorHttpCommand
 {
     public static class State
     {
@@ -18,14 +18,14 @@ public class BrocessorDeviceHttpCommand extends AbstractBrocessorHttpCommand
     private String index;
     private State[] state;
 
-    public BrocessorDeviceHttpCommand(String target, int index, String control, String value)
+    public DeviceCommand(String target, int index, String control, String value)
     {
         this.target = target;
         this.index = String.valueOf(index);
         this.state = new State[]{new State(control, value)};
     }
 
-    public BrocessorDeviceHttpCommand(String target, int index, State[] state)
+    public DeviceCommand(String target, int index, State[] state)
     {
         this.target = target;
         this.index = String.valueOf(index);

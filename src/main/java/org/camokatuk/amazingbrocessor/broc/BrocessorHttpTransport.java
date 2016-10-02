@@ -9,11 +9,11 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.ByteArrayEntity;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.log4j.Logger;
-import org.camokatuk.amazingbrocessor.broc.command.AbstractBrocessorHttpCommand;
+import org.camokatuk.amazingbrocessor.broc.command.BrocessorHttpCommand;
 
 import java.io.IOException;
 
-public class BrocessorHttpTransport implements BrocessorTransport<AbstractBrocessorHttpCommand>
+public class BrocessorHttpTransport implements BrocessorTransport<BrocessorHttpCommand>
 {
     private static final Logger LOGGER = Logger.getLogger(BrocessorHttpTransport.class);
 
@@ -22,7 +22,7 @@ public class BrocessorHttpTransport implements BrocessorTransport<AbstractBroces
     private HttpClient brocClient = HttpClientBuilder.create().build();
     private Gson gson = new GsonBuilder().create();
 
-    public void pushCommand(final AbstractBrocessorHttpCommand brocessorCommand)
+    public void pushCommand(final BrocessorHttpCommand brocessorCommand)
     {
         //        new Thread(new Runnable()
         //        {
@@ -39,14 +39,14 @@ public class BrocessorHttpTransport implements BrocessorTransport<AbstractBroces
         //        }).start();
     }
 
-    private void pushCommandUnsafe(final AbstractBrocessorHttpCommand brocessorCommand) throws IOException
+    private void pushCommandUnsafe(final BrocessorHttpCommand brocessorCommand) throws IOException
     {
         HttpPost request = new HttpPost(BROC_URL);
         request.addHeader("Content-Type", "application/json");
 
         String requestBody = gson.toJson(brocessorCommand);
 
-        LOGGER.info("Sending " + requestBody);
+        LOGGER.debug("Sending " + requestBody);
         HttpEntity requestBody11 = new ByteArrayEntity(requestBody.getBytes("UTF-8"));
 
         request.setEntity(requestBody11);

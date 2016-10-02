@@ -11,9 +11,15 @@ public class KeyboardHookService
 
     private GlobalKeyboardHook keyboardHook;
 
-    public void start(GlobalKeyAdapter globalKeyAdapter)
+    public void start(GlobalKeyAdapter... globalKeyAdapter)
     {
         keyboardHook = new GlobalKeyboardHook();
+
+        for (GlobalKeyAdapter listener : globalKeyAdapter)
+        {
+            keyboardHook.addKeyListener(listener);
+        }
+
         keyboardHook.addKeyListener(new GlobalKeyAdapter()
         {
             @Override
@@ -31,6 +37,5 @@ public class KeyboardHookService
                 LOGGER.debug(event);
             }
         });
-        keyboardHook.addKeyListener(globalKeyAdapter);
     }
 }

@@ -1,30 +1,25 @@
 package org.camokatuk.amazingbrocessor.broc;
 
-import org.camokatuk.amazingbrocessor.broc.command.AbstractBrocessorHttpCommand;
-import org.camokatuk.amazingbrocessor.broc.command.BrocessorDeviceHttpCommand;
+import org.camokatuk.amazingbrocessor.broc.command.BrocessorHttpCommand;
 import org.camokatuk.amazingbrocessor.broc.command.BrocessorOpenPatchHttpCommand;
 import org.camokatuk.amazingbrocessor.broc.command.BrocessorPlaybackHttpCommand;
+import org.camokatuk.amazingbrocessor.broc.command.DeviceCommand;
 
 public class BrocessorHttpCommandFactory
 {
-    public AbstractBrocessorHttpCommand open(String patchName)
+    public BrocessorHttpCommand open(String patchName)
     {
         return new BrocessorOpenPatchHttpCommand("patches/camokatuk/" + patchName + ".bro");
     }
 
-    public AbstractBrocessorHttpCommand stop()
+    public BrocessorHttpCommand playPause()
     {
         return new BrocessorPlaybackHttpCommand("play");
     }
 
-    public AbstractBrocessorHttpCommand play()
+    public BrocessorHttpCommand deviceState(String target, int index, String control, String value)
     {
-        return new BrocessorPlaybackHttpCommand("play");
-    }
-
-    public AbstractBrocessorHttpCommand deviceState(String target, int index, String control, String value)
-    {
-        return new BrocessorDeviceHttpCommand(target, index, control, value);
+        return new DeviceCommand(target, index, control, value);
     }
 }
 

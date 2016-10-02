@@ -1,8 +1,11 @@
 package org.camokatuk.amazingbrocessor;
 
 import org.apache.log4j.Logger;
+import org.camokatuk.amazingbrocessor.keyboard.GeneralBrocessorKeyboardListener;
 import org.camokatuk.amazingbrocessor.keyboard.KeyboardHookService;
-import org.camokatuk.amazingbrocessor.keyboard.TestSynthKeyboardListener;
+import org.camokatuk.amazingbrocessor.logic.AmazingEventBrocessorListener;
+import org.camokatuk.amazingbrocessor.logic.AmazingEventProcessor;
+import org.camokatuk.amazingbrocessor.logic.TestEventMapper;
 
 public class Main
 {
@@ -14,7 +17,10 @@ public class Main
         {
             final Process brocProc = new ProcessBuilder("Brocessor.exe").start();
             KeyboardHookService keyboardHookService = new KeyboardHookService();
-            keyboardHookService.start(new TestSynthKeyboardListener(brocProc));
+
+            AmazingEventProcessor eventQueue = new AmazingEventProcessor(new TestEventMapper());
+
+            keyboardHookService.start(new GeneralBrocessorKeyboardListener(brocProc), new AmazingEventBrocessorListener(eventQueue));
         }
         catch (Exception e)
         {

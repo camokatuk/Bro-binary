@@ -2572,3 +2572,117 @@ JSON parsed;
 
 HTTP REQ - {"target":"synth","index":"0","state":[{"control":"freq","value":".5"}]}
 JSON parsed;
+
+== Bro started ==
+ a4a a4b a4c a4d 0No params;
+a1a2a3a4a5a6a7a7*a7**a8bcd
+== Bro started ==
+ a4a a4b a4c a4d 0No params;
+a1a2a3a4a5a6a7a7*a7**a8bcd
+== Bro started ==
+ a4a a4b a4c a4d 0No params;
+a1a2a3a4a5a6a7a7*a7**a8bc
+HTTP REQ - {"path":"patches/camokatuk/1.bro","target":"global","command":"open"}
+JSON parsed;
+x1z1z2z2z2z2*z3z4
+HTTP REQ - {"target":"global","command":"playPause"}
+JSON parsed;
+d
+== Bro started ==
+ a4a a4b a4c a4d 0No params;
+a1a2a3a4a5a6a7a7*a7**a8bcd
+== Bro started ==
+ a4a a4b a4c a4d 0No params;
+a1a2a3a4a5a6a7a7*a7**a8bc
+== Bro started ==
+ a4a a4b a4c a4d 0No params;
+a1a2a3a4a5a6a7a7*a7**a8bc
+HTTP REQ - {"path":"patches/camokatuk/1.bro","target":"global","command":"open"}
+JSON parsed;
+x1z1z2z2z2z2*z3z4
+HTTP REQ - {"target":"global","command":"playPause"}
+JSON parsed;
+
+HTTP REQ - {"target":"synth","index":"0","state":[{"control":"freq","value":".6"}]}
+JSON parsed;
+
+HTTP REQ - {"target":"synth","index":"0","state":[{"control":"freq","value":".5"}]}
+JSON parsed;
+
+HTTP REQ - {"target":"global","command":"playPause"}
+JSON parsed;
+d
+== Bro started ==
+ a4a a4b a4c a4d 0No params;
+a1a2a3a4a5a6a7a7*a7**a8bc
+HTTP REQ - {"path":"patches/camokatuk/1.bro","target":"global","command":"open"}
+JSON parsed;
+x1z1z2z2z2z2*z3z4
+HTTP REQ - {"target":"global","command":"play"}
+JSON parsed;
+
+HTTP REQ - {"target":"synth","index":"0","state":[{"control":"freq","value":".6"}]}
+JSON parsed;
+
+HTTP REQ - {"target":"synth","index":"0","state":[{"control":"freq","value":".5"}]}
+JSON parsed;
+
+HTTP REQ - {"target":"synth","index":"0","state":[{"control":"freq","value":".4"}]}
+JSON parsed;
+
+HTTP REQ - {"target":"synth","index":"0","state":[{"control":"freq","value":".3"}]}
+JSON parsed;
+
+HTTP REQ - {"target":"synth","index":"0","state":[{"control":"freq","value":".2"}]}
+JSON parsed;
+
+HTTP REQ - {"target":"synth","index":"0","state":[{"control":"freq","value":".1"}]}
+JSON parsed;
+
+HTTP REQ - {"target":"synth","index":"0","state":[{"control":"freq","value":".2"}]}
+JSON parsed;
+
+HTTP REQ - {"target":"synth","index":"0","state":[{"control":"freq","value":".3"}]}
+JSON parsed;
+
+HTTP REQ - {"target":"synth","index":"0","state":[{"control":"freq","value":".4"}]}
+JSON parsed;
+d
+== Bro started ==
+ a4a a4b a4c a4d 0No params;
+a1a2a3a4a5a6a7a7*a7**a8bcd
+== Bro started ==
+ a4a a4b a4c a4d 0No params;
+a1a2a3a4a5a6a7a7*a7**a8bcd
+== Bro started ==
+ a4a a4b a4c a4d 0No params;
+a1a2a3a4a5a6a7a7*a7**a8bcd
+== Bro started ==
+ a4a a4b a4c a4d 0No params;
+a1a2a3a4a5a6a7a7*a7**a8bc
+== Bro started ==
+ a4a a4b a4c a4d 0No params;
+a1a2a3a4a5a6a7a7*a7**a8bc
+HTTP REQ - {"path":"patches/camokatuk/1.bro","target":"global","command":"open"}
+JSON parsed;
+x1z1z2z2z2z2*z3z4
+HTTP REQ - {"target":"global","command":"play"}
+JSON parsed;
+
+HTTP REQ - {"target":"synth","index":"0","state":[{"control":"freq","value":".6"}]}
+JSON parsed;
+
+HTTP REQ - {"target":"synth","index":"0","state":[{"control":"freq","value":".5"}]}
+JSON parsed;
+
+HTTP REQ - {"target":"synth","index":"0","state":[{"control":"freq","value":".4"}]}
+JSON parsed;
+
+HTTP REQ - {"target":"synth","index":"0","state":[{"control":"freq","value":".3"}]}
+JSON parsed;
+
+HTTP REQ - {"target":"synth","index":"0","state":[{"control":"freq","value":".2"}]}
+JSON parsed;
+
+HTTP REQ - {"target":"synth","index":"0","state":[{"control":"freq","value":".1"}]}
+JSON parsed;

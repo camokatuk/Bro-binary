@@ -1,6 +1,6 @@
 package org.camokatuk.amazingbrocessor.broc.command;
 
-public class BrocessorOpenPatchHttpCommand extends BrocessorGlobalHttpCommand
+public class BrocessorOpenPatchHttpCommand extends GlobalCommand
 {
     private String path;
 
