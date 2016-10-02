@@ -17,31 +17,26 @@ public class BrocessorHttpTransport implements BrocessorTransport<AbstractBroces
 {
     private static final Logger LOGGER = Logger.getLogger(BrocessorHttpTransport.class);
 
-    private static final String BROC_URL = "http://localhost:1488";
+    private static final String BROC_URL = "http://localhost:17994";
 
     private HttpClient brocClient = HttpClientBuilder.create().build();
     private Gson gson = new GsonBuilder().create();
 
-    public void pushCommand(final AbstractBrocessorHttpCommand brocessorCommand) throws IOException
+    public void pushCommand(final AbstractBrocessorHttpCommand brocessorCommand)
     {
-        new Thread(new Runnable()
+        //        new Thread(new Runnable()
+        //        {
+        //            public void run()
+        //            {
+        try
         {
-            public void run()
-            {
-                try
-                {
-                    pushCommandUnsafe(brocessorCommand);
-                }
-                catch (IOException e)
-                {
-                    LOGGER.error("Pffff bro", e);
-                }
-                finally
-                {
-                    LOGGER.info("Thread finished");
-                }
-            }
-        }).start();
+            pushCommandUnsafe(brocessorCommand);
+        }
+        catch (IOException e)
+        {
+            LOGGER.error("Pffff bro", e);
+        }
+        //        }).start();
     }
 
     private void pushCommandUnsafe(final AbstractBrocessorHttpCommand brocessorCommand) throws IOException
@@ -57,6 +52,6 @@ public class BrocessorHttpTransport implements BrocessorTransport<AbstractBroces
         request.setEntity(requestBody11);
 
         HttpResponse response = brocClient.execute(request);
-        LOGGER.info(response.getStatusLine().getReasonPhrase());
+        request.releaseConnection();
     }
 }

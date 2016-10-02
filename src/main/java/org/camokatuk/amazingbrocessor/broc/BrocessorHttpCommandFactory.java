@@ -14,7 +14,7 @@ public class BrocessorHttpCommandFactory
 
     public AbstractBrocessorHttpCommand stop()
     {
-        return new BrocessorPlaybackHttpCommand("stop");
+        return new BrocessorPlaybackHttpCommand("play");
     }
 
     public AbstractBrocessorHttpCommand play()
