@@ -4,30 +4,35 @@ public class MixerCommand implements BrocessorHttpCommand
 {
     public static class State
     {
-        private String control;
+        private String in;
+        private String out;
         private String value;
 
-        public State(String control, String value)
+        public State(int in, int out, String value)
         {
-            this.control = control;
+            this.in = String.valueOf(in);
+            this.out = String.valueOf(out);
             this.value = value;
+        }
+
+        public static State in(int in, String value)
+        {
+            return new State(in, 0, value);
+        }
+
+        public static State out(int out, String value)
+        {
+            return new State(0, out, value);
         }
     }
 
-    private String target;
+
+    private String target = "mixer";
     private String index;
     private State[] state;
 
-    public MixerCommand(String target, int index, String control, String value)
+    public MixerCommand(int index, State[] state)
     {
-        this.target = target;
-        this.index = String.valueOf(index);
-        this.state = new State[]{new State(control, value)};
-    }
-
-    public MixerCommand(String target, int index, State[] state)
-    {
-        this.target = target;
         this.index = String.valueOf(index);
         this.state = state;
     }

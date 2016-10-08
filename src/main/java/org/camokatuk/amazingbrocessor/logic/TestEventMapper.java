@@ -6,15 +6,12 @@ import org.camokatuk.amazingbrocessor.broc.command.BrocessorHttpCommand;
 import org.camokatuk.amazingbrocessor.logic.event.CharEvent;
 import org.camokatuk.amazingbrocessor.logic.event.WordEvent;
 
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
 public class TestEventMapper extends AmazingEventMapper
 {
     private final BrocessorHttpCommandFactory brocessorHttpCommandFactory = new BrocessorHttpCommandFactory();
-
-    private double hackSynthValue = 1;
 
     @Override
     public List<BrocessorHttpCommand> map(CharEvent event)
@@ -31,13 +28,12 @@ public class TestEventMapper extends AmazingEventMapper
         }
         else if (event.getChar() == 'd')
         {
-            hackSynthValue = Math.min(0.6, hackSynthValue + 0.1);
-            commands.add(brocessorHttpCommandFactory.deviceState("synth", 0, "freq", new DecimalFormat("#.0").format(hackSynthValue)));
+            commands.add(brocessorHttpCommandFactory.mixerSolo(1, 2, 0));
         }
         else if (event.getChar() == 'a')
         {
-            hackSynthValue = Math.max(0, hackSynthValue - 0.1);
-            commands.add(brocessorHttpCommandFactory.deviceState("synth", 0, "freq", new DecimalFormat("#.0").format(hackSynthValue)));
+            //            commands.add(brocessorHttpCommandFactory.deviceState("synth", 0, "freq", new DecimalFormat("#.0").format(hackSynthValue)));
+            commands.add(brocessorHttpCommandFactory.mixerSolo(1, 2, 1));
         }
 
         return commands;
